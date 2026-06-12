@@ -1,0 +1,41 @@
+{
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  // "extends": "ts-config-single-spa",
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "emitDeclarationOnly": true,
+    "rootDir": "./src",
+    "declarationDir": "./dist",
+    "paths": {
+      "@/*": ["./src/*"],
+      "assets/*": ["./public/assets/*"],
+      "core/*": ["./src/core/*"],
+      "e2e/*": ["./src/e2e/*"],
+      "modules/*": ["./src/modules/*"],
+      "public/*": ["./public/*"],
+      "shared/*": ["./src/shared/*"]
+    },
+    "types": ["node"]
+  },
+  "files": ["src/bem-custodia.tsx"],
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test*"]
+}

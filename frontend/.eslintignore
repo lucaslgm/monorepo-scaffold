@@ -1,0 +1,6 @@
+node_modules
+build
+public
+scripts
+src/assets
+/src/declarations.d.ts

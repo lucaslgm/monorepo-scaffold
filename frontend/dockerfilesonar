@@ -1,0 +1,29 @@
+FROM sonarsource/sonar-scanner-cli
+USER root
+WORKDIR /usr/src
+#proxy ambiente local
+ARG TAG
+ARG PROXY
+ARG PROXY_BYPASS
+ARG SONAR_HOST_URL
+ARG SONAR_AUTH_TOKEN
+ARG SONAR_SCANNER_OPTS
+
+ENV SONAR_HOST_URL=${SONAR_HOST_URL} \
+    SONAR_AUTH_TOKEN=${SONAR_AUTH_TOKEN} \
+    SONAR_SCANNER_OPTS=${SONAR_SCANNER_OPTS} \
+    TAG=${TAG} \
+    http_proxy=${PROXY} \
+    https_proxy=${PROXY} \
+    ftp_proxy=${PROXY} \
+    no_proxy=${PROXY_BYPASS}
+
+#retira o proxy - usar localmente
+#RUN unset http_proxy https_proxy ftp_proxy no_proxy
+#copia todo fonte do diretorio
+COPY . ./
+
+RUN ["sonar-scanner","-X"]
+
+#VOLUME [/usr/src/.sonar]
+#VOLUME [/usr/src/.scannerwork]

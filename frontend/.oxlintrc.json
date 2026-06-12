@@ -1,0 +1,42 @@
+{
+    "$schema": "./node_modules/oxlint/configuration_schema.json",
+    "plugins": [
+        "import",
+        "react",
+        "typescript",
+        "unicorn"
+    ],
+    "env": {
+        "browser": true
+    },
+    "settings": {
+        "react": {
+            "react-hooks/exhaustive-deps": "warn"
+        }
+    },
+    "rules": {
+        "@typescript-eslint/consistent-type-imports": "error",
+        "eqeqeq": "warn",
+        "no-console": [
+            "warn",
+            {
+                "allow": [
+                    "warn",
+                    "error"
+                ]
+            }
+        ],
+        "no-duplicate-imports": "error",
+        "no-unsafe-optional-chaining": "warn",
+        "no-unused-vars": [
+            "warn",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        "no-useless-catch": "off",
+        "react/jsx-key": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/rules-of-hooks": "error"
+    }
+}
