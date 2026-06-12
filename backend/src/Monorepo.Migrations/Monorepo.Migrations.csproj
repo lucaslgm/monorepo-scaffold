@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Define o namespace raiz padrão para o projeto, usado na geração de código e organização das
+    classes.-->
+    <RootNamespace>Monorepo.Migrations</RootNamespace>
+
+    <!-- Especifica que a saída será uma biblioteca (DLL), não um executável. -->
+    <OutputType>Library</OutputType>
+
+    <!-- Gera informações de depuração embutidas no assembly, facilitando o debug sem arquivos .pdb
+    externos. -->
+    <DebugType>embedded</DebugType>
+
+    <!-- Não gera arquivos de símbolos de depuração separados. -->
+    <DebugSymbols>false</DebugSymbols>
+
+    <!-- Define o sistema operacional padrão do Docker como Linux. -->
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Monorepo.WebApi\Monorepo.WebApi.csproj" />
+  </ItemGroup>
+
+</Project>

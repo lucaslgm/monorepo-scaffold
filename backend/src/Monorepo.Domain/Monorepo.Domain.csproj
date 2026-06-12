@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Define o namespace raiz padrão para o projeto, usado na geração de código e organização das
+    classes.-->
+    <RootNamespace>Monorepo.Domain</RootNamespace>
+
+    <!-- Especifica que a saída será uma biblioteca (DLL), não um executável. -->
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CSharpFunctionalExtensions" Version="3.7.0" />
+  </ItemGroup>
+
+</Project>

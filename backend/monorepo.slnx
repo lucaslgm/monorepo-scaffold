@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Monorepo.Domain/Monorepo.Domain.csproj" />
+    <Project Path="src/Monorepo.Migrations/Monorepo.Migrations.csproj" />
+    <Project Path="src/Monorepo.WebApi/Monorepo.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Monorepo.WebApi.Tests.Integration/Monorepo.WebApi.Tests.Integration.csproj" />
+    <Project Path="tests/Monorepo.WebApi.Tests.Unit/Monorepo.WebApi.Tests.Unit.csproj" />
+  </Folder>
+</Solution>

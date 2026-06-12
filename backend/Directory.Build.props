@@ -1,0 +1,62 @@
+<Project>
+    <PropertyGroup>
+        <!-- Define a versão do .NET para todos os projetos. -->
+        <TargetFramework>net10.0</TargetFramework>
+
+        <!-- Ativa o suporte a tipos anuláveis, ajudando a evitar erros de referência nula. -->
+        <Nullable>enable</Nullable>
+
+        <!-- Inclui automaticamente namespaces comuns, reduzindo a necessidade de imports manuais. -->
+        <ImplicitUsings>enable</ImplicitUsings>
+
+        <!-- Garante builds determinísticos, ou seja, builds idênticos geram binários idênticos. -->
+        <Deterministic>true</Deterministic>
+
+        <!-- Define o tipo de informações de depuração como portável, compatível com diferentes plataformas. -->
+        <DebugType>portable</DebugType>
+
+        <!-- Gera símbolos de depuração (.pdb), úteis para debugging. -->
+        <DebugSymbols>true</DebugSymbols>
+
+        <!-- Faz com que o estilo de código seja verificado durante o build. -->
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+
+        <!-- Usa o nível mais recente de análise de código (analisadores Roslyn). -->
+        <AnalysisLevel>latest</AnalysisLevel>
+
+        <!-- Desativa otimizações de compilação, útil para debugging. -->
+        <Optimize>false</Optimize>
+
+        <!-- Publica a URL do repositório no pacote gerado. -->
+        <PublishRepositoryUrl>false</PublishRepositoryUrl>
+
+        <!-- Inclui arquivos de código-fonte não rastreados no pacote de símbolos. -->
+        <EmbedUntrackedSources>false</EmbedUntrackedSources>
+
+        <!-- Ativa o SourceLink, permitindo depuração do código-fonte original via repositório. -->
+        <EnableSourceLink>false</EnableSourceLink>
+
+        <!-- Gera um arquivo XML de documentação a partir dos comentários do código, útil para ferramentas e publicação de pacotes. -->
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+        <!-- Suprime o aviso 1591, que alerta sobre membros públicos sem comentários de documentação. -->
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+        <!-- Indica que o build está rodando em CI/CD. -->
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+
+        <!-- Publica a URL do repositório no pacote gerado. -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+        <!-- Inclui arquivos de código-fonte não rastreados no pacote de símbolos. -->
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+        <!-- Ativa o SourceLink, permitindo depuração do código-fonte original via repositório. -->
+        <EnableSourceLink>true</EnableSourceLink>
+
+        <!-- Ativa otimizações de compilação, útil para melhorar o desempenho e reduzir o tamanho do binário em ambientes de produção. -->
+        <Optimize>true</Optimize>
+    </PropertyGroup>
+</Project>
